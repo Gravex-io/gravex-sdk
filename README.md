@@ -1,5 +1,5 @@
 # Gravex SDK
-[![npm](https://img.shields.io/static/v1?label=npm&message=%40gravex%2Fgravex-sdk&color=green&labelColor=333)](https://www.npmjs.com/package/@gravex/gravex-sdk)
+[![npm](https://img.shields.io/static/v1?label=npm&message=%40gravexio%2Fgravex-sdk&color=green&labelColor=333)](https://www.npmjs.com/package/@gravexio/gravex-sdk)
 
 An SDK for building applications on top of Gravex.
 
