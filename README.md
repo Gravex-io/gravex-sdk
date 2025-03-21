@@ -71,7 +71,7 @@ gravex.account.tokenAccounts
 gravex.account.tokenAccountRawInfos
 ```
 
-#### Api methods (https://gravex-io/gravex-sdk/blob/master/src/api/api.ts)
+#### Api methods (https://github.com/Gravex-io/gravex-sdk/blob/main/src/api/api.ts)
 
 - fetch gravex default mint list (mainnet only)
 
