@@ -1,9 +1,9 @@
 # Raydium SDK
 
-![npm](https://img.shields.io/badge/npm%3A%40gravex%2Fgravex--sdk-green?style=flat&labelColor=333)
-[npm-url]: https://www.npmjs.com/package/@gravex/raydium-sdk-v2
-
 [![npm][npm-image]][npm-url]
+
+[npm-image]: https://img.shields.io/badge/npm%3A%40gravex%2Fgravex--sdk-green?style=flat&labelColor=333
+[npm-url]: https://www.npmjs.com/package/@gravex/gravex-sdk
 
 An SDK for building applications on top of Raydium.
 
