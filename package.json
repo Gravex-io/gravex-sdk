@@ -1,6 +1,6 @@
 {
   "name": "@gravexio/gravex-sdk",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "An SDK for building applications for Gravex.",
   "license": "AGPL-3.0-only",
   "main": "./lib/index.js",
