@@ -1,7 +1,7 @@
 # Raydium SDK
 
-[npm-image]: https://img.shields.io/npm/v/@raydium-io/raydium-sdk-v2.svg?style=flat
-[npm-url]: https://www.npmjs.com/package/@raydium-io/raydium-sdk-v2
+[npm-image]: https://img.shields.io/npm/v/@gravex/raydium-sdk-v2.svg?style=flat
+[npm-url]: https://www.npmjs.com/package/@gravex/raydium-sdk-v2
 
 [![npm][npm-image]][npm-url]
 
@@ -12,12 +12,8 @@ An SDK for building applications on top of Raydium.
 ### Installation
 
 ```
-$ yarn add @raydium-io/raydium-sdk-v2
+$ yarn add @gravex/gravex-sdk
 ```
-
-## SDK method Demo
-
-[SDK V2 Demo Repo](https://github.com/raydium-io/raydium-sdk-V2-demo)
 
 ## SDK local test
 
@@ -32,8 +28,8 @@ e.g. yarn dev test/init.ts
 ### Initialization
 
 ```javascript
-import { Raydium } from "@raydium-io/raydium-sdk";
-const raydium = await Raydium.load({
+import { Gravex } from "@gravex/gravex-sdk";
+const raydium = await Gravex.load({
   connection,
   owner, // key pair or publicKey, if you run a node process, provide keyPair
   signAllTransactions, // optional - provide sign functions provided by @solana/wallet-adapter-react
@@ -46,7 +42,7 @@ const raydium = await Raydium.load({
 #### how to transform token account data
 
 ```javascript
-import { parseTokenAccountResp } from "@raydium-io/raydium-sdk";
+import { parseTokenAccountResp } from "@gravex/raydium-sdk";
 
 const solAccountResp = await connection.getAccountInfo(owner.publicKey);
 const tokenAccountResp = await connection.getTokenAccountsByOwner(owner.publicKey, { programId: TOKEN_PROGRAM_ID });
@@ -75,7 +71,7 @@ raydium.account.tokenAccounts
 raydium.account.tokenAccountRawInfos
 ```
 
-#### Api methods (https://github.com/raydium-io/raydium-sdk-V2/blob/master/src/api/api.ts)
+#### Api methods (https://gravex-io/gravex-sdk/blob/master/src/api/api.ts)
 
 - fetch raydium default mint list (mainnet only)
 
@@ -93,7 +89,7 @@ const data = await raydium.api.getTokenInfo([
 ```
 
 - fetch pool list (mainnet only)
-  available fetch params defined here: https://github.com/raydium-io/raydium-sdk-V2/blob/master/src/api/type.ts#L249
+  available fetch params defined here: https://github.com/gravex-io/gravex-sdk/blob/master/src/api/type.ts#L249
 
 ```javascript
 const data = await raydium.api.getPoolList({});
@@ -114,15 +110,6 @@ const data = await raydium.api.fetchPoolById({
 const data = await raydium.api.fetchPoolByMints({
   mint1: "So11111111111111111111111111111111111111112",
   mint2: "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R", // optional,
-  // extra params: https://github.com/raydium-io/raydium-sdk-V2/blob/master/src/api/type.ts#L249
-});
-```
-
-- fetch farmInfo by id (mainnet only)
-
-```javascript
-// ids: join farm ids by comma(,)
-const data = await raydium.api.fetchFarmInfoById({
-  ids: "4EwbZo8BZXP5313z5A2H11MRBP15M5n6YxfmkjXESKAW,HUDr9BDaAGqi37xbQHzxCyXvfMCKPTPNF8g9c9bPu1Fu",
+  // extra params: https://github.com/gravex-io/gravex-sdk/blob/master/src/api/type.ts#L249
 });
 ```
