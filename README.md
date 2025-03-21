@@ -1,6 +1,6 @@
 # Raydium SDK
 
-[npm-image]: https://img.shields.io/npm/v/@gravex/raydium-sdk-v2.svg?style=flat
+[npm](https://img.shields.io/badge/npm%3A%40gravex%2Fgravex--sdk-green?style=flat&labelColor=333)
 [npm-url]: https://www.npmjs.com/package/@gravex/raydium-sdk-v2
 
 [![npm][npm-image]][npm-url]
