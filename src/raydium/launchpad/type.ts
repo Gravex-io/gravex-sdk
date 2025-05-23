@@ -102,6 +102,7 @@ export interface CreatePlatform<T = TxVersion.LEGACY> {
   platformAdmin: PublicKey;
   platformClaimFeeWallet: PublicKey;
   platformLockNftWallet: PublicKey;
+  cpConfigId: PublicKey;
 
   migrateCpLockNftScale: {
     platformScale: BN;
@@ -127,9 +128,27 @@ export interface UpdatePlatform<T = TxVersion.LEGACY> {
   platformId?: PublicKey;
 
   updateInfo:
-    | { type: "updateClaimFeeWallet"; value: PublicKey }
-    | { type: "updateFeeRate"; value: BN }
-    | { type: "updateName" | "updateImg" | "updateWeb"; value: string };
+  | { type: "updateClaimFeeWallet"; value: PublicKey }
+  | { type: "updateFeeRate"; value: BN }
+  | { type: "updateName" | "updateImg" | "updateWeb"; value: string }
+  | { type: "migrateCpLockNftScale"; value: { platformScale: BN; creatorScale: BN; burnScale: BN } }
+  | { type: 'updateCpConfigId', value: PublicKey }
+  | {
+    type: 'updateAll', value: {
+      platformClaimFeeWallet: PublicKey,
+      platformLockNftWallet: PublicKey,
+      cpConfigId: PublicKey,
+      migrateCpLockNftScale: {
+        platformScale: BN,
+        creatorScale: BN,
+        burnScale: BN,
+      },
+      feeRate: BN,
+      name: string,
+      web: string,
+      img: string,
+    }
+  };
 
   computeBudgetConfig?: ComputeBudgetConfig;
   txTipConfig?: TxTipConfig;
@@ -152,8 +171,18 @@ export interface ClaimPlatformFee<T = TxVersion.LEGACY> {
   txTipConfig?: TxTipConfig;
   txVersion?: T;
   feePayer?: PublicKey;
-  associatedOnly?: boolean;
-  checkCreateATAOwner?: boolean;
+}
+
+export interface ClaimAllPlatformFee<T = TxVersion.LEGACY> {
+  programId?: PublicKey;
+  authProgramId?: PublicKey;
+  platformId: PublicKey;
+  platformClaimFeeWallet: PublicKey;
+
+  computeBudgetConfig?: ComputeBudgetConfig;
+  txTipConfig?: TxTipConfig;
+  txVersion?: T;
+  feePayer?: PublicKey;
 }
 
 export interface CreateVesting<T = TxVersion.LEGACY> {
